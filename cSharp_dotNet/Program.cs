@@ -1,4 +1,5 @@
-﻿using cSharp_dotNet.calculator;
+﻿using cSharp_dotNet.Array_String;
+using cSharp_dotNet.calculator;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,17 +31,24 @@ namespace cSharp_dotNet
             Console.WriteLine("The Char is : " + letter);
         }
     }
+    
+
 
     internal class Program
     {
+        
+
+
+
         static void Main(string[] args)
         {
+            
             //This is My first classes instant.....
             WelcomeClass hello = new WelcomeClass();
 
             hello.ShowMessage();
 
-
+            Console.WriteLine();
             //This is second class... primitive data type 
             DataType data1 = new DataType();
             data1.number1 = 45;
@@ -49,10 +57,12 @@ namespace cSharp_dotNet
 
             data1.showData();
 
-           // this is the range 
+            Console.WriteLine();
+            // this is the range 
             Console.WriteLine("{0} {1}", float.MinValue, float.MaxValue);
 
 
+            Console.WriteLine();
             //this is the constant value which is  not reassignable.....
             Console.WriteLine("This is the constant value-");
             const int number = 45;
@@ -60,6 +70,7 @@ namespace cSharp_dotNet
 
             Console.WriteLine("the integer const number is : " + number + " and the float consttnt number is : " + Pi);
 
+            Console.WriteLine();
             //convertion the value
             string textNumber = "12345";
             int number3 = int.Parse(textNumber);
@@ -68,6 +79,7 @@ namespace cSharp_dotNet
             int number4 = Convert.ToInt32(textNumber);
             Console.WriteLine("This is the another way to change the text number : " + number4);
 
+            Console.WriteLine();
             //this is the try catch block
             try
             {
@@ -80,6 +92,7 @@ namespace cSharp_dotNet
             }
 
 
+            Console.WriteLine();
             //Arithmetic Operator....
             int num1 = 50;
             int numb2 = 13;
@@ -95,7 +108,47 @@ namespace cSharp_dotNet
 
 
 
+            Console.WriteLine();
+            //Array-String Class
+
+            var arrayString = new ArrayString();
+            arrayString.ShowNumbers();
+
+
+            var names = new string[2] { "Firose", "Munna" };
+            var joinnedName = string.Join(", ", names);
+            var formattedName = string.Format("In a variable : {0} {1}", names[0], names[1]);
+
+
+            Console.WriteLine(joinnedName);
+            Console.WriteLine(formattedName);
+
+
+
+            //Value and reference type 
+            Console.WriteLine();
+            ValueReference();
+
+
             Console.ReadLine();
+        }
+
+        static void ValueReference()
+        {
+            int number1 = 10;
+            int number2 = number1;
+
+            number2++;
+
+            Console.WriteLine(string.Format("Number 1 : {0} and Number 2 : {1}", number1, number2));
+
+
+            var numbers = new int[3] { 2, 3, 5 };
+            var numbers2 = numbers;
+
+            numbers2[0] = 8;
+
+            Console.WriteLine(string.Format("Numbers[0] : {0} and Numbers2[0] : {1}.", numbers[0], numbers2[0]));
         }
     }
 }
