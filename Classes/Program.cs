@@ -106,6 +106,11 @@ namespace Classes
 
             Console.WriteLine("After seeting the private number from user input then the number is : {0}", num.getNumber());
 
+            //this is for Car class...
+            
+            var car1 = new Car();
+            car1.carInfo();
+
             Console.ReadKey();  
         }
     }
